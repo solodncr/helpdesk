@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+    <persistence-unit name="helpdesk" transaction-type="RESOURCE_LOCAL">
+
+        <class>kz.solosoft.helpdesk.entity.Device</class>
+        <class>kz.solosoft.helpdesk.entity.Vendor</class>
+        <class>kz.solosoft.helpdesk.entity.Software</class>
+        <class>kz.solosoft.helpdesk.entity.OtherHelp</class>
+        <class>kz.solosoft.helpdesk.entity.Region</class>
+        <class>kz.solosoft.helpdesk.entity.Country</class>
+        <class>kz.solosoft.helpdesk.entity.Customer</class>
+        <class>kz.solosoft.helpdesk.entity.Town</class>
+        <class>kz.solosoft.helpdesk.entity.Company</class>
+    </persistence-unit>
+</persistence>
