@@ -11,5 +11,6 @@
         <class>kz.solosoft.helpdesk.entity.Customer</class>
         <class>kz.solosoft.helpdesk.entity.Town</class>
         <class>kz.solosoft.helpdesk.entity.Company</class>
+        <class>kz.solosoft.helpdesk.entity.Address</class>
     </persistence-unit>
 </persistence>

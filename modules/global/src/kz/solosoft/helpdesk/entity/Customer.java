@@ -30,10 +30,9 @@ public class Customer extends StandardEntity {
     @JoinColumn(name = "COUNTRY_ID")
     protected Country country;
 
+    @ManyToOne(fetch = FetchType.LAZY)
     @Lookup(type = LookupType.SCREEN, actions = {"lookup"})
-    @OnDeleteInverse(DeletePolicy.UNLINK)
-    @OnDelete(DeletePolicy.UNLINK)
-    @OneToOne(fetch = FetchType.LAZY)
+    @OnDelete(DeletePolicy.CASCADE)
     @JoinColumn(name = "REGION_ID")
     protected Region region;
 

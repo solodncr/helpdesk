@@ -1,6 +1,5 @@
 package kz.solosoft.helpdesk.entity;
 
-import com.haulmont.chile.core.annotations.Composition;
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.cuba.core.entity.annotation.OnDelete;
@@ -22,9 +21,8 @@ public class Software extends StandardEntity {
     @Column(name = "MODULE_")
     protected String module;
 
-    @Composition
+    @ManyToOne(fetch = FetchType.LAZY)
     @OnDelete(DeletePolicy.CASCADE)
-    @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "VENDOR_ID")
     protected Vendor vendor;
 

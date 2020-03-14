@@ -3,9 +3,7 @@ package kz.solosoft.helpdesk.entity;
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @NamePattern("%s|name")
 @Table(name = "HELPDESK_REGION")
@@ -21,6 +19,18 @@ public class Region extends StandardEntity {
 
     @Column(name = "DESCRIPTION")
     protected String description;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "COUNTRY_ID")
+    protected Country country;
+
+    public Country getCountry() {
+        return country;
+    }
+
+    public void setCountry(Country country) {
+        this.country = country;
+    }
 
     public String getDescription() {
         return description;

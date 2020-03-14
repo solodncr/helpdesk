@@ -1,10 +1,8 @@
 package kz.solosoft.helpdesk.entity;
 
-import com.haulmont.chile.core.annotations.Composition;
 import com.haulmont.chile.core.annotations.NamePattern;
 import com.haulmont.cuba.core.entity.StandardEntity;
 import com.haulmont.cuba.core.entity.annotation.OnDelete;
-import com.haulmont.cuba.core.entity.annotation.OnDeleteInverse;
 import com.haulmont.cuba.core.global.DeletePolicy;
 
 import javax.persistence.*;
@@ -26,11 +24,9 @@ public class Device extends StandardEntity {
     @Column(name = "DESCRIPTION", length = 1024)
     protected String description;
 
-    @Composition
-    @OnDeleteInverse(DeletePolicy.UNLINK)
-    @OnDelete(DeletePolicy.UNLINK)
-    @OneToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "VENDOR_ID")
+    @OnDelete(DeletePolicy.CASCADE)
     protected Vendor vendor;
 
     public void setVendor(Vendor vendor) {
